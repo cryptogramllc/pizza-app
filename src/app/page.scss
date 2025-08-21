@@ -1,0 +1,142 @@
+// Main page styles
+.pizza-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fef3c7 0%, #fee2e2 100%);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+  }
+}
+
+.search-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 16rem;
+  font-size: 1rem;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  background: var(--white);
+  color: var(--text-dark);
+  
+  &:hover {
+    background: #fef2f2;
+  }
+  
+  &.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+  }
+}
+
+.pizza-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.loading-container,
+.error-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fef3c7 0%, #fee2e2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-icon,
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.loading-text {
+  font-size: 1.25rem;
+  color: var(--text-gray);
+}
+
+.error-text {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.retry-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: var(--white);
+  
+  &:hover {
+    background: var(--primary-hover);
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  
+  .empty-text {
+    color: var(--text-gray);
+    font-size: 1.125rem;
+  }
+}
